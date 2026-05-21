@@ -13,7 +13,8 @@
     "db:generate": "prisma generate",
     "db:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
-    "db:migrate-categories": "tsx prisma/migrate-to-categories.ts"
+    "db:migrate-categories": "tsx prisma/migrate-to-categories.ts",
+    "db:push-turso": "tsx prisma/push-turso.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

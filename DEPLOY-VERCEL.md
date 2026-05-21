@@ -53,15 +53,17 @@ npm run db:seed
 1. Go to [vercel.com](https://vercel.com) → **Add New Project**.
 2. **Import** your GitHub repository.
 3. Framework should auto-detect **Next.js** (no custom build command needed).
-4. Under **Environment Variables**, add:
+4. Under **Environment Variables**, add (required **before** the first deploy succeeds):
 
 | Name | Value | Environments |
 |------|--------|----------------|
-| `DATABASE_URL` | `libsql://...` from Turso | Production, Preview |
-| `TURSO_AUTH_TOKEN` | token from Turso | Production, Preview |
-| `ADMIN_PASSWORD` | a strong password for `/admin/login` | Production, Preview |
+| `DATABASE_URL` | `libsql://...` from Turso | Production, Preview, **Development** |
+| `TURSO_AUTH_TOKEN` | token from Turso | Production, Preview, **Development** |
+| `ADMIN_PASSWORD` | a strong password for `/admin/login` | Production, Preview, **Development** |
 
 5. Click **Deploy**.
+
+> **Build failed at `prisma generate`?** Redeploy after adding the variables above. The app uses Turso at runtime; `prisma` is in `dependencies` so Vercel can run `postinstall` correctly.
 
 ## 5. After deploy
 

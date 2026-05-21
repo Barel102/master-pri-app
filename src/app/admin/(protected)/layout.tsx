@@ -2,6 +2,9 @@ import { redirect } from "next/navigation";
 import { AdminSidebar } from "@/components/admin/admin-sidebar";
 import { isAdminAuthenticated } from "@/lib/auth/session";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export default async function ProtectedAdminLayout({
   children,
 }: {

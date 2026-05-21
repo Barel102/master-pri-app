@@ -10,6 +10,7 @@ export default defineConfig({
     seed: "tsx prisma/seed.ts",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
+    // Fallback lets `prisma generate` run on Vercel before env vars are wired
+    url: process.env["DATABASE_URL"] ?? "file:./dev.db",
   },
 });

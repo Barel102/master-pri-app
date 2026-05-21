@@ -6,6 +6,10 @@ import { StoreNavigation } from "@/components/store/store-navigation";
 import { StoreUIProvider } from "@/components/store/store-ui-context";
 import { storeHe } from "@/lib/i18n/store-he";
 
+/** DB-backed layout; skip static prerender on Vercel build without DATABASE_URL */
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 const assistant = Assistant({
   subsets: ["hebrew", "latin"],
   weight: ["400", "500", "600", "700"],
